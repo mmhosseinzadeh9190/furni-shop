@@ -58,6 +58,8 @@
 body {
   font-family: "Inter", sans-serif;
   height: 100dvh;
+  background-color: var(--color-white);
+  color: var(--color-gray-dark);
 }
 
 header {
@@ -66,6 +68,9 @@ header {
   justify-content: space-between;
   padding: 20px 100px;
   background-color: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
 .logo {
@@ -109,7 +114,20 @@ header {
 
   .buttons__icon {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--rounded-full);
   }
+}
+
+.btn {
+  padding: 12px 36px;
+  border: none;
+  border-radius: var(--rounded-full);
+  font-size: var(--text-16);
+  font-weight: 500;
+  line-height: 28px;
+  cursor: pointer;
 }
 
 .hero {
@@ -136,16 +154,6 @@ header {
       align-items: center;
       gap: 16px;
 
-      button {
-        padding: 12px 36px;
-        border: none;
-        border-radius: var(--rounded-full);
-        font-size: var(--text-16);
-        font-weight: 500;
-        line-height: 28px;
-        cursor: pointer;
-      }
-
       .hero__cta__btn--primary {
         background-color: var(--color-accent);
         color: var(--color-gray-dark);
@@ -171,5 +179,101 @@ header {
     .hero__banner__img {
       width: 810px;
     }
+  }
+}
+
+.top-seller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 50px 150px;
+}
+
+.top-seller__description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  h2 {
+    font-size: var(--text-34);
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--color-gray-base);
+    font-size: var(--text-14);
+    line-height: 24px;
+  }
+
+  button {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+    margin-top: 56px;
+  }
+
+  button:hover {
+    background-color: var(--color-gray-base);
+  }
+}
+
+.top-seller__products {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  .top-seller__product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    padding: 24px 24px 40px;
+    position: relative;
+
+    .top-seller__product__img {
+      width: 250px;
+    }
+
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span:first-child {
+        font-size: var(--text-16);
+        font-weight: 600;
+        line-height: 24px;
+      }
+
+      span:nth-child(2) {
+        font-size: var(--text-18);
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+
+    button {
+      opacity: 0;
+      background-color: var(--color-gray-dark);
+      border-radius: var(--rounded-full);
+      border: none;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      bottom: -18px;
+      box-shadow: 0 7px 15px -1px rgba(47, 47, 47, 0.4);
+    }
+  }
+}
+
+.top-seller__product:hover {
+  background-color: rgba(53, 115, 110, 0.1);
+  border-radius: var(--rounded-20);
+
+  button {
+    opacity: 1;
   }
 }
